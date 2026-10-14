@@ -371,12 +371,12 @@ svg { display: block; }
   gap: 32px;
 }
 
-.site-nav ul {
+.nav-links {
   display: flex;
   gap: 28px;
 }
 
-.site-nav ul a {
+.nav-links a {
   font-size: 0.92rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.82);
@@ -384,7 +384,7 @@ svg { display: block; }
   transition: color 0.2s;
 }
 
-.site-nav ul a:hover { color: var(--gold-light); }
+.nav-links a:hover { color: var(--gold-light); }
 
 .nav-toggle {
   display: none;
@@ -1057,45 +1057,189 @@ svg { display: block; }
 /* --- Pied de page -------------------------------------------------------- */
 
 .site-footer {
-  padding-top: 56px;
-  background: var(--navy-900);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(201, 160, 82, 0.1), transparent 40%),
+    var(--navy-900);
   color: rgba(255, 255, 255, 0.65);
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  padding-bottom: 40px;
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.footer-tagline {
-  margin-top: 6px;
-  font-size: 0.88rem;
-  color: var(--gold-light);
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 28px;
-  font-size: 0.92rem;
-}
-
-.footer-links a {
+.site-footer a {
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: var(--gold-light); }
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-top: 80px;
+  padding-bottom: 64px;
+}
+
+.footer-brand .logo { font-size: 2rem; }
+
+.footer-signature {
+  margin: 6px 0 20px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.footer-text {
+  max-width: 340px;
+  font-size: 0.92rem;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.nav-socials { display: none; }
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 160, 82, 0.4);
+  border-radius: 50%;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.socials a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-900);
+  transform: translateY(-3px);
+}
+
+.socials svg {
+  width: 19px;
+  height: 19px;
+}
+
+.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-stroke .icon-dot,
+.icon-stroke .icon-solid {
+  fill: currentColor;
+  stroke: none;
+}
+
+.icon-fill { fill: currentColor; }
+
+.footer-col h2 {
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.footer-col li + li { margin-top: 12px; }
+
+.footer-col a {
+  position: relative;
+  font-size: 0.93rem;
+}
+
+.footer-col a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.footer-col a:hover { color: var(--white); }
+.footer-col a:hover::after { transform: scaleX(1); }
 
 .footer-bottom {
-  padding-top: 22px;
-  padding-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  padding-top: 24px;
+  padding-bottom: 28px;
   border-top: 1px solid var(--line-dark);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+}
+
+.footer-bottom p { margin: 0; }
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.footer-legal a:hover { color: var(--gold-light); }
+
+/* --- Bouton de retour en haut ------------------------------------------- */
+
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--gold);
+  color: var(--navy-900);
+  border-radius: 50%;
+  box-shadow: 0 12px 28px -10px rgba(17, 26, 46, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.2s;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.to-top:hover { background: var(--gold-light); }
+
+.to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* --- Apparition au défilement ------------------------------------------- */
@@ -1123,7 +1267,10 @@ svg { display: block; }
   .btn:hover,
   .plan:hover,
   .price-card:hover,
-  .pack:hover { transform: none; }
+  .pack:hover,
+  .socials a:hover { transform: none; }
+
+  .to-top { transition: opacity 0.3s, visibility 0.3s; }
 }
 
 /* --- Adaptatif ----------------------------------------------------------- */
@@ -1147,12 +1294,18 @@ svg { display: block; }
 
   .site-nav.is-open { display: flex; }
 
-  .site-nav ul {
+  .site-nav .nav-socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .nav-links {
     flex-direction: column;
     gap: 0;
   }
 
-  .site-nav ul a {
+  .nav-links a {
     display: block;
     padding: 12px 0;
     font-size: 1rem;
@@ -1169,6 +1322,8 @@ svg { display: block; }
   .steps { grid-template-columns: repeat(2, 1fr); }
 
   .price-cards { grid-template-columns: repeat(2, 1fr); }
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
 
   .packs { grid-template-columns: 1fr; }
   .pack { padding: 32px 28px; }
@@ -1200,6 +1355,20 @@ svg { display: block; }
 
   .tab { padding: 10px 16px; font-size: 0.86rem; }
   .price-cards { grid-template-columns: 1fr; }
+  .footer-main {
+    grid-template-columns: 1fr;
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  .to-top { right: 16px; bottom: 16px; }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 24px;
+    padding-bottom: 28px;
+  }
   .price-card-cta { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
   .hero-actions .btn { width: 100%; }
 }

@@ -11,8 +11,11 @@
   var navToggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('menu');
 
+  var toTop = document.querySelector('.to-top');
+
   function updateHeader() {
     header.classList.toggle('is-scrolled', window.scrollY > 8);
+    toTop.classList.toggle('is-visible', window.scrollY > 600);
   }
 
   window.addEventListener('scroll', updateHeader, { passive: true });

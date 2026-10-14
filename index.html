@@ -16,9 +16,9 @@
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <!-- En-tête -->
-  <header class="site-header" id="haut">
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#haut" aria-label="Admin'Facile, retour en haut de page">
+      <a class="logo" href="#top" aria-label="Admin'Facile, retour en haut de page">
         Admin<span class="logo-mark">'</span>Facile
       </a>
 
@@ -28,7 +28,7 @@
       </button>
 
       <nav class="site-nav" id="menu" aria-label="Navigation principale">
-        <ul>
+        <ul class="nav-links">
           <li><a href="#prestations">Prestations</a></li>
           <li><a href="#forfaits">Forfaits</a></li>
           <li><a href="#avantage-fiscal">Avantage fiscal</a></li>
@@ -36,6 +36,23 @@
           <li><a href="#faq">Questions</a></li>
         </ul>
         <a class="btn btn-gold btn-small" href="#contact">Demander un devis</a>
+        <ul class="socials nav-socials" aria-label="Réseaux sociaux">
+          <li>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-fill"><path d="M16 3c.3 2.2 1.7 3.7 4 3.9v3c-1.5 0-2.8-.4-4-1.2v5.8a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 1.6 2.3V3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-stroke"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" class="icon-dot"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-stroke"><path d="M4 20l1.3-3.8a8 8 0 1 1 2.9 2.7z"/><path d="M9.2 8.6c.2-.4.5-.4.8-.4l.9 2c0 .3-.4.7-.6.9.5 1 1.3 1.8 2.3 2.3.2-.2.6-.6.9-.6l2 .9c0 .3 0 .6-.4.8-.8.6-1.8.6-2.8.1a8 8 0 0 1-3.3-3.3c-.5-1-.5-2 .2-2.7z" class="icon-solid"/></svg>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -467,39 +484,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container container-narrow">
-        <div class="section-head reveal">
-          <p class="eyebrow">Questions fréquentes</p>
-          <h2>Vous vous demandez peut-être…</h2>
-        </div>
-
-        <div class="faq reveal">
-          <details>
-            <summary>Dans quelle zone intervenez-vous ?</summary>
-            <p>Admin'Facile accompagne ses clients en Île-de-France.</p>
-          </details>
-          <details>
-            <summary>Le crédit d'impôt s'applique-t-il à toutes les prestations ?</summary>
-            <p>Non. Seules les prestations entrant dans le périmètre des services à la personne y ouvrent droit, sous conditions et dans la limite des plafonds en vigueur. L'éligibilité est précisée sur chaque devis.</p>
-          </details>
-          <details>
-            <summary>Que se passe-t-il si je dépasse mon forfait ?</summary>
-            <p>Avec le forfait Premium, les démarches au-delà du forfait sont facturées 39 € pour une démarche simple, ou sur devis pour un dossier complexe. Pour les autres formules, nous vous proposons un devis ou le passage à un forfait supérieur.</p>
-          </details>
-          <details>
-            <summary>Garantissez-vous l'issue d'une démarche ?</summary>
-            <p>Nous nous engageons sur la qualité du dossier, son envoi et son suivi. La décision finale appartient toujours à l'administration ou à l'organisme concerné.</p>
-          </details>
-          <details>
-            <summary>Mes documents restent-ils confidentiels ?</summary>
-            <p>Oui. La confidentialité est au cœur de notre engagement : vos documents sont collectés de façon sécurisée et utilisés uniquement pour réaliser vos démarches.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact -->
     <section class="section section-navy" id="contact">
       <div class="container split">
@@ -566,26 +550,120 @@
         </form>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2>Vous vous demandez peut-être…</h2>
+        </div>
+
+        <div class="faq reveal">
+          <details>
+            <summary>Dans quelle zone intervenez-vous ?</summary>
+            <p>Admin'Facile accompagne ses clients en Île-de-France.</p>
+          </details>
+          <details>
+            <summary>Comment se passe une première demande ?</summary>
+            <p>Vous nous contactez par téléphone, WhatsApp ou via le formulaire. Nous faisons le point sur votre besoin, son urgence et les pièces dont vous disposez, puis nous vous proposons un devis ou le forfait adapté avant toute intervention.</p>
+          </details>
+          <details>
+            <summary>Le crédit d'impôt s'applique-t-il à toutes les prestations ?</summary>
+            <p>Non. Seules les prestations entrant dans le périmètre des services à la personne y ouvrent droit, sous conditions et dans la limite des plafonds en vigueur. L'éligibilité est précisée sur chaque devis.</p>
+          </details>
+          <details>
+            <summary>Que se passe-t-il si je dépasse mon forfait ?</summary>
+            <p>Avec le forfait Premium, les démarches au-delà du forfait sont facturées 39 € pour une démarche simple, ou sur devis pour un dossier complexe. Pour les autres formules, nous vous proposons un devis ou le passage à un forfait supérieur.</p>
+          </details>
+          <details>
+            <summary>Remplacez-vous mon expert-comptable ?</summary>
+            <p>Non. Pour les indépendants et les TPE, nous prenons en charge l'organisation administrative, le classement, le suivi des factures et les relances. Nous travaillons en coordination avec votre expert-comptable, sans réaliser les actes réservés aux professions réglementées.</p>
+          </details>
+          <details>
+            <summary>Garantissez-vous l'issue d'une démarche ?</summary>
+            <p>Nous nous engageons sur la qualité du dossier, son envoi et son suivi. La décision finale appartient toujours à l'administration ou à l'organisme concerné.</p>
+          </details>
+          <details>
+            <summary>Mes documents restent-ils confidentiels ?</summary>
+            <p>Oui. La confidentialité est au cœur de notre engagement : vos documents sont collectés de façon sécurisée et utilisés uniquement pour réaliser vos démarches.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Pied de page -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
+    <div class="container footer-main">
+      <div class="footer-brand">
         <p class="logo">Admin<span class="logo-mark">'</span>Facile</p>
-        <p class="footer-tagline">Confidentialité · Simplicité · Suivi de bout en bout</p>
+        <p class="footer-signature">Votre administratif. On s'en occupe.</p>
+        <p class="footer-text">Assistance administrative en Île-de-France pour les particuliers, les familles, les seniors, les indépendants et les TPE.</p>
+
+        <!-- Remplacer les « # » par les adresses des comptes une fois créés -->
+        <ul class="socials" aria-label="Réseaux sociaux">
+          <li>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-fill"><path d="M16 3c.3 2.2 1.7 3.7 4 3.9v3c-1.5 0-2.8-.4-4-1.2v5.8a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 1.6 2.3V3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-stroke"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" class="icon-dot"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-stroke"><path d="M4 20l1.3-3.8a8 8 0 1 1 2.9 2.7z"/><path d="M9.2 8.6c.2-.4.5-.4.8-.4l.9 2c0 .3-.4.7-.6.9.5 1 1.3 1.8 2.3 2.3.2-.2.6-.6.9-.6l2 .9c0 .3 0 .6-.4.8-.8.6-1.8.6-2.8.1a8 8 0 0 1-3.3-3.3c-.5-1-.5-2 .2-2.7z" class="icon-solid"/></svg>
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul class="footer-links">
-        <li><a href="#prestations">Prestations</a></li>
-        <li><a href="#forfaits">Forfaits</a></li>
-        <li><a href="#avantage-fiscal">Avantage fiscal</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+      <nav class="footer-col" aria-label="Prestations">
+        <h2>Prestations</h2>
+        <ul>
+          <li><a href="#prestations">Démarches à l'unité</a></li>
+          <li><a href="#prestations">Courriers et relances</a></li>
+          <li><a href="#prestations">Dossiers complexes</a></li>
+          <li><a href="#prestations">Accompagnement</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Forfaits">
+        <h2>Forfaits</h2>
+        <ul>
+          <li><a href="#forfaits" data-onglet="onglet-particuliers">Essentiel, Sérénité, Premium</a></li>
+          <li><a href="#forfaits" data-onglet="onglet-particuliers">Packs familles</a></li>
+          <li><a href="#forfaits" data-onglet="onglet-pros">Indépendants &amp; TPE</a></li>
+          <li><a href="#avantage-fiscal">Avantage fiscal</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Informations">
+        <h2>Admin'Facile</h2>
+        <ul>
+          <li><a href="#parcours">Comment ça marche</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+          <li><a href="#contact">Demander un devis</a></li>
+        </ul>
+      </nav>
     </div>
+
     <div class="container footer-bottom">
       <p>© <span id="annee">2026</span> Admin'Facile. Tous droits réservés.</p>
+      <ul class="footer-legal">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">CGV</a></li>
+      </ul>
     </div>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Revenir en haut de la page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 
   <script src="js/main.js"></script>
 </body>
